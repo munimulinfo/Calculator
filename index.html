@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container-parrent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            background-color: lightseagreen;
+        }
+
+        .container input {
+            height: 50px;
+            width: 75px;
+            font-size: 20px;
+            margin: 5px;
+            background-color: gold;
+        }
+
+        section div {
+            background-color: black;
+        }
+
+        div h1 {
+            color: whitesmoke;
+            font-size: 50px;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .color {
+            width: 310px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="container-parrent">
+        <div class="container">
+            <h1>Calculator</h1>
+            <tr>
+                <input style="width:332px; background-color: yellow;" type="text" name="" id="myResult">
+            </tr>
+            <tr>
+                <br>
+                <td><input type="button" value="c" id="clearMe"></td>
+                <td><input type="button" value="(" onclick="calculator('('  )"></td>
+                <td><input type="button" value=")" onclick="calculator(')')"></td>
+                <td><input type="button" value="Nissan" onclick="calculator('BogiJhai')"></td>
+            </tr>
+            <br>
+            <tr>
+                <td><input type="button" value="7" onclick="calculator('7')"></td>
+                <td><input type="button" value="8" onclick="calculator('8')"></td>
+                <td><input type="button" value="9" onclick="calculator('9')"></td>
+                <td><input type="button" value="+" onclick="calculator('+')"></td>
+            </tr>
+            <br>
+            <tr>
+                <td><input type="button" value="6" onclick="calculator('6')"></td>
+                <td><input type="button" value="5" onclick="calculator('5')"></td>
+                <td><input type="button" value="4" onclick="calculator('4')"></td>
+                <td><input type="button" value="-" onclick="calculator('-')"></td>
+            </tr>
+            <br>
+            <tr>
+                <td><input type="button" value="3" onclick="calculator('3')"></td>
+                <td><input type="button" value="2" onclick="calculator('2')"></td>
+                <td><input type="button" value="1" onclick="calculator('1')"></td>
+                <td><input type="button" value="*" onclick="calculator('*')"></td>
+            </tr>
+            <br>
+            <tr>
+                <td><input type="button" value="0" onclick="calculator('0')"></td>
+                <td><input type="button" value="." onclick="calculator('.')"></td>
+                <td><input type="button" value="/" onclick="calculator('/')"></td>
+                <td><input type="button" value="=" onclick="answere()"></td>
+            </tr>
+
+        </div>
+    </section>
+
+    <script> document.getElementById('clearMe').addEventListener('click', function() {
+        document.getElementById('myResult').value = "";
+    });
+    
+    function calculator(newValue) {
+        document.getElementById('myResult').value += newValue;
+    }
+    
+    function answere() {
+        var b = eval(document.getElementById('myResult').value);
+        document.getElementById('myResult').value = b;
+    } </script>
+</body>
+
+</html>
